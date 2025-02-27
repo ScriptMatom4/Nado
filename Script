@@ -1,0 +1,22 @@
+_G.AutoExecuter = true
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+if _G.AutoExecuter then
+    local ScriptSpawnSlap = queue_on_teleport or queueonteleport
+    if ScriptSpawnSlap then
+        ScriptSpawnSlap([[
+            _G.AutoExecuter = true
+            if not game:IsLoaded() then
+                game.Loaded:Wait()
+            end
+            repeat wait() until game.Players.LocalPlayer
+            wait(0.25)
+            loadstring(game:HttpGet("https://rawscripts.net/raw/Dead-Rails-Alpha-Best-auto-farm-bond-30385"))()
+        ]])
+    end
+    -- Выполняем скрипт сразу
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Dead-Rails-Alpha-Best-auto-farm-bond-30385"))()
+end
